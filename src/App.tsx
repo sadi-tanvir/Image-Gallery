@@ -15,6 +15,7 @@ function App() {
   const [selectedImageUrl, setSelectedImageUrl] = useState<ImageType[]>([]);
   const [dragItem, setDragItem] = useState<any>(null);
   const [dragOverItem, setDragOverItem] = useState<any>(null);
+  const [refetchImages, setRefetchImages] = useState(false)
 
 
   // handle check box value
@@ -72,7 +73,7 @@ function App() {
       .then((data) => {
         setImageUrls(data);
       });
-  }, []);
+  }, [refetchImages]);
 
   return (
     <div className="container mx-auto flex flex-col justify-center items-center pt-5 pb-10">
@@ -118,7 +119,10 @@ function App() {
           })
         }
 
-        <UploadImageBtn />
+        <UploadImageBtn
+          setRefetchImages={setRefetchImages}
+          refetchImages={refetchImages}
+        />
       </div>
     </div>
   );

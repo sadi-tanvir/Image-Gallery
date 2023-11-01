@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Image Gallery App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Throughout the development of this project, I intentionally chose to implement all the functionality using raw JavaScript. While I could have leveraged external libraries like 'react-beautiful-dnd' for drag-and-drop functionality, I opted to explore and implement the features using my own creative ideas. This decision allowed me to gain a deeper understanding of the underlying concepts and further hone my development skills.
 
-## Available Scripts
+## Live Demo
+You can view a live demo of the image gallery at [Live Demo Link](https://your-live-demo-link-here).
 
-In the project directory, you can run:
+## Features
+1. **Gallery Layout:**
+   - Implement a grid layout for the image gallery.
+   - The gallery should display images with one feature image larger than the others.
 
-### `npm start`
+2. **Sorting:**
+   - Enable reordering functionality to allow users to rearrange the order of images in the gallery.
+   - Implement drag-and-drop functionality or any other intuitive method for reordering.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. **Deleting Multiple Images:**
+   - Allow users to select multiple images and delete them.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. **Setting Feature Image:**
+   - Allow users to set a feature image by sorting.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
+- React JS
+- Tailwind CSS
+- TypeScript    
