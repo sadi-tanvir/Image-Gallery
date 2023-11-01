@@ -36,8 +36,11 @@ function App() {
       });
     };
 
+    // refill image URLS
     setImageUrls(changedData);
   };
+
+
 
   // delete Images function
   const handleDeleteImage = () => {
@@ -45,14 +48,22 @@ function App() {
     setImageUrls(remainingImages);
   };
 
-  // sort images
+
+
+  // sorting images by drugging
   const handleSort = () => {
+    // duplicate all the images
     let clonedItems = [...imageUrls];
+
+    // taking the draggable item
     const draggedItemContent = clonedItems.splice(dragItem, 1)[0];
+
     // switch the position
     clonedItems.splice(dragOverItem, 0, draggedItemContent)
+
     // refill urls
     setImageUrls(clonedItems);
+
     // reset value
     setDragItem(null);
     setDragOverItem(null);
@@ -66,7 +77,8 @@ function App() {
   }, [imageUrls]);
 
 
-  // Fetch the JSON file from the public folder
+
+  // Fetch the JSON file of image URLS from the public folder
   useEffect(() => {
     fetch('/ImageUrls.json')
       .then((response) => response.json())
@@ -75,57 +87,67 @@ function App() {
       });
   }, [refetchImages]);
 
+
+
   return (
-    <div className="container mx-auto flex flex-col justify-center items-center pt-5 pb-10">
-      <div className='container flex justify-between items-center px-5'>
-        {selectedImageUrl.length > 0 ?
-          <div className='flex justify-center items-center'>
-            <CheckBox
-              checked={true}
-              labelContent={`${selectedImageUrl.length} Images Selected`}
-            />
+    <div className="w-screen">
+      <div className="container mx-auto flex flex-col justify-center items-center mt-10 pb-10 shadow-lg px-10">
+        <div className='container flex justify-between items-center px-5'>
+          {selectedImageUrl.length > 0 ?
+            <div className='flex justify-center items-center'>
+              {/* counting of selecting images */}
+              <CheckBox
+                checked={true}
+                labelContent={`${selectedImageUrl.length} Images Selected`}
+              />
 
-            <CheckBox
-              onChange={handleChange}
-              id={555}
-              checked={imageUrls.length > 0 ? selectedImageUrl.length >= imageUrls.length : false}
-              labelContent='Select All'
-              boxClass='ml-5'
-            />
-          </div>
-          :
-          <h1 className='text-slate-600 font-bold text-2xl'>Gallery</h1>
-        }
-        {selectedImageUrl.length > 0 &&
-          <button onClick={handleDeleteImage} className='text-red-500 font-bold text-lg'>Delete Images</button>
-        }
-      </div>
-      <hr className="w-full h-[2px] my-2 bg-gray-300 border-red-100" />
-      <div className='grid grid-cols-2 md:grid-cols-5 gap-5 px-5'>
-        {
-          imageUrls.map((elem, index) => {
-            const { id, isChecked, path } = elem;
-            return <ImageBox
-              key={index}
-              index={index}
-              id={id}
-              isChecked={isChecked}
-              path={path}
-              handleChange={handleChange}
-              onDragStart={() => setDragItem(index)}
-              onDragEnter={() => setDragOverItem(index)}
-              onDragEnd={handleSort}
-            />
-          })
-        }
+              {/* select all images */}
+              <CheckBox
+                onChange={handleChange}
+                id={555}
+                checked={imageUrls.length > 0 ? selectedImageUrl.length >= imageUrls.length : false}
+                labelContent='Select All'
+                boxClass='ml-5'
+              />
+            </div>
+            :
+            <h1 className='text-slate-600 font-bold text-2xl'>Gallery</h1>
+          }
+          {selectedImageUrl.length > 0 &&
+            <button onClick={handleDeleteImage} className='text-red-500 font-bold text-lg'>Delete Images</button>
+          }
+        </div>
 
-        <UploadImageBtn
-          setRefetchImages={setRefetchImages}
-          refetchImages={refetchImages}
-        />
+        <hr className="w-full h-[2px] my-2 bg-gray-300 border-red-100" />
+
+        {/* image layout grid */}
+        <div className='grid grid-cols-2 md:grid-cols-5 gap-5 px-5'>
+          {
+            imageUrls.map((elem, index) => {
+              const { id, isChecked, path } = elem;
+              return <ImageBox
+                key={index}
+                index={index}
+                id={id}
+                isChecked={isChecked}
+                path={path}
+                handleChange={handleChange}
+                onDragStart={() => setDragItem(index)}
+                onDragEnter={() => setDragOverItem(index)}
+                onDragEnd={handleSort}
+              />
+            })
+          }
+
+          {/* upload image button */}
+          <UploadImageBtn
+            setRefetchImages={setRefetchImages}
+            refetchImages={refetchImages}
+          />
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

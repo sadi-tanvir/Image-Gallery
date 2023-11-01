@@ -1,4 +1,3 @@
-import React from 'react'
 import { ImageIcon } from './Icons'
 
 const UploadImageBtn = ({ setRefetchImages, refetchImages }: { setRefetchImages: (args: boolean) => void, refetchImages: boolean }) => {
@@ -7,7 +6,7 @@ const UploadImageBtn = ({ setRefetchImages, refetchImages }: { setRefetchImages:
             <ImageIcon />
             <h1 className='text-xl font-semibold text-gray-600'>Add Image</h1>
         </div>
-    )
-}
+    );
+};
 
-export default UploadImageBtn
+export default UploadImageBtn;
