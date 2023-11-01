@@ -11,7 +11,7 @@ interface ImageBoxType {
 const ImageBox = ({ index, path, id, isChecked, handleChange }: ImageBoxType) => {
     return (
         <div className={`${index === 0 ? 'col-span-2 row-span-2' : ''} relative shadow-lg group rounded-xl cursor-move`}>
-            <img className='w-full rounded-xl' src={path} alt="image" />
+            <img className='w-full h-full rounded-xl' src={path} alt="image" />
             <div className='w-full h-full bg-black absolute top-0 bottom-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-40 rounded-xl '>
             </div>
             <CheckBox
