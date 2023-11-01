@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "path": "/images/image-2.webp",
+        "isChecked": false
+    },
+    {
+        "id": 2,
+        "path": "/images/image-2.webp",
+        "isChecked": true
+    },
+    {
+        "id": 3,
+        "path": "/images/image-3.webp",
+        "isChecked": false
+    },
+    {
+        "id": 4,
+        "path": "/images/image-4.webp",
+        "isChecked": false
+    },
+    {
+        "id": 5,
+        "path": "/images/image-5.webp",
+        "isChecked": false
+    },
+    {
+        "id": 6,
+        "path": "/images/image-6.webp",
+        "isChecked": false
+    },
+    {
+        "id": 7,
+        "path": "/images/image-7.webp",
+        "isChecked": false
+    },
+    {
+        "id": 8,
+        "path": "/images/image-8.webp",
+        "isChecked": false
+    },
+    {
+        "id": 9,
+        "path": "/images/image-9.webp",
+        "isChecked": false
+    },
+    {
+        "id": 10,
+        "path": "/images/image-10.jpeg",
+        "isChecked": false
+    },
+    {
+        "id": 11,
+        "path": "/images/image-11.jpeg",
+        "isChecked": false
+    }
+]

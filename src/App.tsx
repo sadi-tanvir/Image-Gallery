@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImageIcon, ImageUrls } from "./components/ImageUrls";
 import ImageBox from "./components/ImageBox";
+import CheckBox from "./components/CheckBox";
 
 type ImageType = {
   id: number;
@@ -10,13 +11,52 @@ type ImageType = {
 
 function App() {
   const [imageUrls, setImageUrls] = useState<ImageType[]>(ImageUrls)
+  const [filteredImageUrl, setFilteredImageUrl] = useState<ImageType[]>([])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
+    const { checked } = e.target;
+    let changedData: ImageType[];
+    if (id === 555) {
+      changedData = imageUrls.map(image => {
+        image.isChecked = true;
+        return image;
+      });
+    } else {
+      changedData = imageUrls.map(image => {
+        if (image.id === id) image.isChecked = checked;
+        return image;
+      });
+    }
+
+    setImageUrls(changedData);
+  };
+
+  useEffect(() => {
+    const filteredData = imageUrls.filter(image => image.isChecked === true);
+    setFilteredImageUrl(filteredData)
+  }, [imageUrls])
 
   return (
     <div className="container mx-auto flex flex-col justify-center items-center pt-5 pb-10">
       <div className='container flex justify-between items-center px-5'>
-        <div>
+        {filteredImageUrl.length > 0 ?
+          <div className='flex justify-center items-center'>
+            <CheckBox
+              checked={true}
+              labelContent={`${filteredImageUrl.length} Files Selected`}
+            />
+
+            <CheckBox
+              onChange={handleChange}
+              id={555}
+              checked={imageUrls.length > 0 ? filteredImageUrl.length >= imageUrls.length : false}
+              labelContent='Select All'
+              boxClass='ml-5'
+            />
+          </div>
+          :
           <h1 className='text-slate-600 font-bold text-2xl'>Gallery</h1>
-        </div>
+        }
         <div>
           <button className='text-red-500 font-bold text-lg'>Delete files</button>
         </div>
@@ -32,6 +72,7 @@ function App() {
               id={id}
               isChecked={isChecked}
               path={path}
+              handleChange={handleChange}
             />
           })
         }
