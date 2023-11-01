@@ -3,7 +3,7 @@
 Throughout the development of this project, I intentionally chose to implement all the functionality using raw JavaScript. While I could have leveraged external libraries like 'react-beautiful-dnd' for drag-and-drop functionality, I opted to explore and implement the features using my own creative ideas. This decision allowed me to gain a deeper understanding of the underlying concepts and further hone my development skills.
 
 ## Live Demo
-You can view a live demo of the image gallery at [Live Demo Link](https://6542914866e055044e190433--preeminent-vacherin-74e7d7.netlify.app/).
+You can view a live demo of the image gallery at [Live Demo Link](https://65429c0d6ff2cf0ee70df39c--preeminent-vacherin-74e7d7.netlify.app/).
 
 ## Features
 1. **Gallery Layout:**
