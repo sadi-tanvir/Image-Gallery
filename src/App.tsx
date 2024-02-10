@@ -123,24 +123,33 @@ function App() {
         {/* image layout grid */}
         <div className='grid grid-cols-2 md:grid-cols-5 gap-5 px-5'>
           {
-            imageUrls.map((elem, index) => {
-              const { id, isChecked, path } = elem;
-              return <ImageBox
-                key={index}
-                index={index}
-                id={id}
-                isChecked={isChecked}
-                path={path}
-                handleChange={handleChange}
-                onDragStart={() => setDragItem(index)}
-                onDragEnter={() => setDragOverItem(index)}
-                onDragEnd={handleSort}
-              />
-            })
+            imageUrls.length > 0 ?
+
+              imageUrls.map((elem, index) => {
+                const { id, isChecked, path } = elem;
+                return <ImageBox
+                  key={index}
+                  index={index}
+                  id={id}
+                  isChecked={isChecked}
+                  path={path}
+                  handleChange={handleChange}
+                  onDragStart={() => setDragItem(index)}
+                  onDragEnter={() => setDragOverItem(index)}
+                  onDragEnd={handleSort}
+                />
+              })
+              :
+              // Loader
+              [...Array(11)].map((item, index) => (
+                <div className={`animate-pulse px-4 ${index === 0 ? 'col-span-2 row-span-2 h-full' : ''}`}>
+                  <div className={`${index === 0 ? 'h-full' : 'h-36'}  min-w-10 bg-gray-300 rounded w-full mb-2`}></div>
+                </div >
+              ))
           }
 
-          {/* upload image button */}
-          <UploadImageBtn
+          { /* upload image button */}
+          < UploadImageBtn
             setRefetchImages={setRefetchImages}
             refetchImages={refetchImages}
           />
