@@ -149,10 +149,12 @@ function App() {
           }
 
           { /* upload image button */}
-          < UploadImageBtn
-            setRefetchImages={setRefetchImages}
-            refetchImages={refetchImages}
-          />
+          {
+            imageUrls.length < 12 && < UploadImageBtn
+              setRefetchImages={setRefetchImages}
+              refetchImages={refetchImages}
+            />
+          }
         </div>
       </div>
     </div>

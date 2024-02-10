@@ -1,57 +1,62 @@
 [
     {
         "id": 1,
-        "path": "/images/image-2.webp",
+        "path": "/images/1.jpg",
         "isChecked": false
     },
     {
         "id": 2,
-        "path": "/images/image-2.webp",
+        "path": "/images/2.jpg",
         "isChecked": false
     },
     {
         "id": 3,
-        "path": "/images/image-3.webp",
+        "path": "/images/3.jpg",
         "isChecked": false
     },
     {
         "id": 4,
-        "path": "/images/image-4.webp",
+        "path": "/images/4.jpg",
         "isChecked": false
     },
     {
         "id": 5,
-        "path": "/images/image-5.webp",
+        "path": "/images/5.jpg",
         "isChecked": false
     },
     {
         "id": 6,
-        "path": "/images/image-6.webp",
+        "path": "/images/6.jpg",
         "isChecked": false
     },
     {
         "id": 7,
-        "path": "/images/image-7.webp",
+        "path": "/images/7.jpg",
         "isChecked": false
     },
     {
         "id": 8,
-        "path": "/images/image-8.webp",
+        "path": "/images/8.jpg",
         "isChecked": false
     },
     {
         "id": 9,
-        "path": "/images/image-9.webp",
+        "path": "/images/9.jpg",
         "isChecked": false
     },
     {
         "id": 10,
-        "path": "/images/image-10.jpeg",
+        "path": "/images/10.jpg",
         "isChecked": false
     },
     {
         "id": 11,
-        "path": "/images/image-11.jpeg",
+        "path": "/images/11.jpg",
+        "isChecked": false
+    },
+    {
+        "id": 12,
+        "path": "/images/12.jpg",
         "isChecked": false
     }
 ]
